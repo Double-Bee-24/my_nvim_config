@@ -1,0 +1,22 @@
+return {
+  require 'plugins.blink',
+  require 'plugins.codecompanion',
+  require 'plugins.conform',
+  require 'plugins.flash',
+  require 'plugins.gitsigns',
+  require 'plugins.indent-blankline',
+  require 'plugins.lspconfig',
+  require 'plugins.lualine',
+  require 'plugins.lazydev',
+  require 'plugins.mini',
+  require 'plugins.neo-tree',
+  require 'plugins.neoscroll',
+  require 'plugins.telescope',
+  require 'plugins.todo-comments',
+  require 'plugins.tokyonight',
+  require 'plugins.treesitter',
+  require 'plugins.which-key',
+  require 'plugins.windsurf',
+
+  'NMAC427/guess-indent.nvim',
+}
