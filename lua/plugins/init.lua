@@ -11,10 +11,12 @@ return {
   require 'plugins.mini',
   require 'plugins.neo-tree',
   require 'plugins.neoscroll',
+  require 'plugins.noice',
   require 'plugins.telescope',
   require 'plugins.todo-comments',
   require 'plugins.tokyonight',
   require 'plugins.treesitter',
+  require 'plugins.trouble',
   require 'plugins.which-key',
   require 'plugins.windsurf',
 
