@@ -26,13 +26,50 @@ return {
       end
     end,
     formatters_by_ft = {
-      -- JavaScript/TypeScript support
-      javascript = { 'prettier' },
-      typescript = { 'prettier' },
-      javascriptreact = { 'prettier' },
-      typescriptreact = { 'prettier' },
-      json = { 'prettier' },
-      jsonc = { 'prettier' },
+      -- JavaScript/TypeScript with Biome fallback to Prettier
+      javascript = function(bufnr)
+        if vim.fs.find({ 'biome.json', 'biome.jsonc' }, { path = vim.api.nvim_buf_get_name(bufnr), upward = true })[1] then
+          return { 'biome' }
+        else
+          return { 'prettier' }
+        end
+      end,
+      typescript = function(bufnr)
+        if vim.fs.find({ 'biome.json', 'biome.jsonc' }, { path = vim.api.nvim_buf_get_name(bufnr), upward = true })[1] then
+          return { 'biome' }
+        else
+          return { 'prettier' }
+        end
+      end,
+      javascriptreact = function(bufnr)
+        if vim.fs.find({ 'biome.json', 'biome.jsonc' }, { path = vim.api.nvim_buf_get_name(bufnr), upward = true })[1] then
+          return { 'biome' }
+        else
+          return { 'prettier' }
+        end
+      end,
+      typescriptreact = function(bufnr)
+        if vim.fs.find({ 'biome.json', 'biome.jsonc' }, { path = vim.api.nvim_buf_get_name(bufnr), upward = true })[1] then
+          return { 'biome' }
+        else
+          return { 'prettier' }
+        end
+      end,
+      json = function(bufnr)
+        if vim.fs.find({ 'biome.json', 'biome.jsonc' }, { path = vim.api.nvim_buf_get_name(bufnr), upward = true })[1] then
+          return { 'biome' }
+        else
+          return { 'prettier' }
+        end
+      end,
+      jsonc = function(bufnr)
+        if vim.fs.find({ 'biome.json', 'biome.jsonc' }, { path = vim.api.nvim_buf_get_name(bufnr), upward = true })[1] then
+          return { 'biome' }
+        else
+          return { 'prettier' }
+        end
+      end,
+      -- These typically stay with Prettier since Biome doesn't handle them as well
       html = { 'prettier' },
       css = { 'prettier' },
       scss = { 'prettier' },
@@ -43,6 +80,11 @@ return {
       lua = { 'stylua' },
     },
     formatters = {
+      biome = {
+        condition = function(ctx)
+          return vim.fs.find({ 'biome.json', 'biome.jsonc' }, { path = ctx.filename, upward = true })[1]
+        end,
+      },
       prettier = {
         -- This ensures prettier respects your .prettierrc files
         condition = function(ctx)

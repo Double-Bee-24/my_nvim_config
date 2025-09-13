@@ -117,6 +117,10 @@ return {
           },
         },
       },
+      -- Add Biome LSP configuration
+      biome = {},
+      -- Optional: Add TypeScript LSP as fallback for projects without Biome
+      ts_ls = {},
     }
 
     local ensure_installed = vim.tbl_keys(servers or {})

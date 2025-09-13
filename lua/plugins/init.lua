@@ -8,6 +8,7 @@ return {
   require 'plugins.lspconfig',
   require 'plugins.lualine',
   require 'plugins.lazydev',
+  require 'plugins.mason',
   require 'plugins.mini',
   require 'plugins.neo-tree',
   require 'plugins.neoscroll',
