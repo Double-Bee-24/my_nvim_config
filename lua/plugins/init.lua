@@ -1,5 +1,6 @@
 return {
   require 'plugins.blink',
+  require 'plugins.catppuccin',
   require 'plugins.codecompanion',
   require 'plugins.conform',
   require 'plugins.flash',
@@ -15,7 +16,6 @@ return {
   require 'plugins.noice',
   require 'plugins.telescope',
   require 'plugins.todo-comments',
-  require 'plugins.tokyonight',
   require 'plugins.treesitter',
   require 'plugins.trouble',
   require 'plugins.which-key',
