@@ -57,6 +57,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Make search more visible
+vim.api.nvim_set_hl(0, 'IncSearch', { bg = '#ff9900', fg = '#000000', bold = true })
+vim.api.nvim_set_hl(0, 'Search', { bg = '#ffff00', fg = '#000000', bold = true })
+vim.api.nvim_set_hl(0, 'CurSearch', { bg = '#ff0000', fg = '#ffffff', bold = true })
+
+-- Make command line more visible
+vim.api.nvim_set_hl(0, 'MsgArea', { bg = '#2d3748', fg = '#ffffff' })
+vim.api.nvim_set_hl(0, 'MsgSeparator', { bg = '#4a5568', fg = '#ffffff' })
+
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'

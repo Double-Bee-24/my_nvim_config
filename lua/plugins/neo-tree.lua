@@ -16,6 +16,9 @@ return {
             hide_dotfiles = false, -- don't hide dotfiles
             hide_gitignored = false, -- don't hide files ignored by git
           },
+          follow_current_file = {
+            enabled = true,
+          },
         },
       }
     end,
