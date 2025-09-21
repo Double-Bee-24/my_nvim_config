@@ -1,5 +1,7 @@
 return {
+  require 'plugins.autopairs',
   require 'plugins.blink',
+  require 'plugins.bufferline',
   require 'plugins.catppuccin',
   require 'plugins.codecompanion',
   require 'plugins.conform',
@@ -14,6 +16,7 @@ return {
   require 'plugins.neo-tree',
   require 'plugins.neoscroll',
   require 'plugins.noice',
+  require 'plugins.project',
   require 'plugins.telescope',
   require 'plugins.todo-comments',
   require 'plugins.treesitter',
