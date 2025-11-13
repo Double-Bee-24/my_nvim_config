@@ -1,9 +1,11 @@
 return {
   require 'plugins.autopairs',
+  require 'plugins.autosession',
   require 'plugins.blink',
   require 'plugins.bufferline',
   require 'plugins.catppuccin',
   require 'plugins.codecompanion',
+  require 'plugins.colorizer',
   require 'plugins.conform',
   require 'plugins.flash',
   require 'plugins.gitsigns',
