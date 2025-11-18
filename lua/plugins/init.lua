@@ -7,6 +7,7 @@ return {
   require 'plugins.codecompanion',
   require 'plugins.colorizer',
   require 'plugins.conform',
+  require 'plugins.diffview',
   require 'plugins.flash',
   require 'plugins.gitsigns',
   require 'plugins.indent-blankline',
