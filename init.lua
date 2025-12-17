@@ -57,6 +57,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Refresh neo-tree after saving files
+vim.api.nvim_create_autocmd('BufWritePost', {
+  desc = 'Refresh neo-tree after saving files',
+  group = vim.api.nvim_create_augroup('neotree-refresh', { clear = true }),
+  callback = function()
+    vim.schedule(function()
+      pcall(function()
+        require('neo-tree.sources.manager').refresh 'filesystem'
+      end)
+    end)
+  end,
+})
+
 -- Make search more visible
 vim.api.nvim_set_hl(0, 'IncSearch', { bg = '#ff9900', fg = '#000000', bold = true })
 vim.api.nvim_set_hl(0, 'Search', { bg = '#ffff00', fg = '#000000', bold = true })
