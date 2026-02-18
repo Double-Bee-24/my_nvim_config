@@ -4,20 +4,40 @@ return {
     version = '^18.0.0',
     opts = {
       adapters = {
-        gemini = {
-          type = 'gemini',
-          env = {
-            api_key = 'GEMINI_API_KEY',
+        ollama = {
+          name = 'ollama',
+          features = {
+            text = true,
+            tokens = true,
+            vision = false,
           },
-          model = 'models/gemini-1.5-pro',
+          url = 'http://localhost:11434/v1/chat/completions',
+          raw_mode = false,
+          headers = {
+            ['Content-Type'] = 'application/json',
+          },
+          parameters = {
+            sync = true,
+          },
+          schema = {
+            model = {
+              default = 'qwen2.5:14b',
+            },
+            num_ctx = {
+              default = 8192,
+            },
+            temperature = {
+              default = 0.7,
+            },
+          },
         },
       },
       strategies = {
         chat = {
-          adapter = 'gemini',
+          adapter = 'ollama',
         },
         inline = {
-          adapter = 'gemini',
+          adapter = 'ollama',
         },
       },
     },
