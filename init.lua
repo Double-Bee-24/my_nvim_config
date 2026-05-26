@@ -3,6 +3,8 @@ vim.g.maplocalleader = ' '
 
 vim.g.have_nerd_font = true
 
+vim.opt.autochdir = false -- Add this line
+
 vim.o.number = true
 -- vim.o.relativenumber = true
 

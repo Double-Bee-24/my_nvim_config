@@ -17,7 +17,7 @@ return {
             hide_gitignored = false, -- don't hide files ignored by git
           },
           follow_current_file = {
-            enabled = true,
+            enabled = false,
           },
         },
       }
